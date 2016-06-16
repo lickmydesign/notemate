@@ -60,6 +60,7 @@
 	</nav>
 
 	<div class="main-content container">
+		@include('common.errors')
 		@yield('content')
 	</div>
 

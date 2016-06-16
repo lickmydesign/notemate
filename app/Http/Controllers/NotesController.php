@@ -52,14 +52,24 @@ class NotesController extends Controller
 
 	}
 
-	public function edit()
+	public function edit(Note $note)
 	{
-		return view('notes.edit');
+		$data['note'] = $note;
+
+		return view('notes.edit', $data);
 	}
 
-	public function update()
+	public function update(Request $request, Note $note)
 	{
+		$this->validate($request, [
+			'title' => 'required|max:255',
+			'contents' => 'required',
+		]);
 
+		$note->update($request->all());
+
+		//todo: flash message
+		return redirect('/notes');
 	}
 
 	public function delete()
