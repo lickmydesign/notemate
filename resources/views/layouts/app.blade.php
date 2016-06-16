@@ -61,6 +61,7 @@
 
 	<div class="main-content container">
 		@include('common.errors')
+		@include('common.flash')
 		@yield('content')
 	</div>
 

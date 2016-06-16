@@ -68,7 +68,7 @@ class NotesController extends Controller
 
 		$note->update($request->all());
 
-		//todo: flash message
+		flash('Note updated.', 'success');
 		return redirect('/notes');
 	}
 
