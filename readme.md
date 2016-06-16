@@ -1,26 +1,31 @@
-# Laravel PHP Framework
+# Notes App
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+A basic notes app built using the Laravel framework.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+# Database Creation 
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+The app expects a mysql database schema named 'notemate'.
 
-## Official Documentation
+Step 1: 
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Create the db schema with:
+    CREATE SCHEMA `notemate` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; )
 
-## Contributing
+Step 2: 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Either amend the db settings in .env and run 'php artisan migrate' to create a blank database
 
-## Security Vulnerabilities
+-- or --
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+use the '\database\create_database.sql' script to populate it with a user and some test notes.
+
+# Using the app
+
+You can either login as the existing user (email: john@aol.com, password: 123456), or sign up as a new user.
+
+# Note
+
+Email reminders will not work unless smtp, etc. is setup in config (set to 'log' by default).
 
 ## License
 
