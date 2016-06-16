@@ -5,7 +5,7 @@
 	<p>Here you can find a quick overview of your latest notes.</p>
 
 	<p>
-		<a href="/notes/add" class="btn btn-success"><i class="fa fa-plus"></i> Add Note</a>
+		<a href="/note" class="btn btn-success"><i class="fa fa-plus"></i> Add Note</a>
 	</p>
 
 	@if (count($latest_notes) > 0)

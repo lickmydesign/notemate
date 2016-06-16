@@ -28,8 +28,8 @@ Route::get('/notes', 'NotesController@index');
 Route::get('/notes/{note}', 'NotesController@show');
 
 // add
-Route::get('/notes/add', 'NotesController@add');
-Route::post('/notes/add', 'NotesController@store');
+Route::get('/note', 'NotesController@add');
+Route::post('/note', 'NotesController@save');
 
 // edit
 Route::get('/notes/{note}/edit', 'NotesController@edit');

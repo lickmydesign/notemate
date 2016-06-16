@@ -47,9 +47,17 @@ class NotesController extends Controller
 		return view('notes.add');
 	}
 
-	public function save()
+	public function save(Request $request)
 	{
+		$this->validate($request, [
+			'title' => 'required|max:255',
+			'contents' => 'required',
+		]);
 
+		$request->user()->notes()->create($request->all());
+
+		flash('Note created.', 'success');
+		return redirect('/notes');
 	}
 
 	public function edit(Note $note)
