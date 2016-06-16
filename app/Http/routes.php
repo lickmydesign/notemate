@@ -1,5 +1,8 @@
 <?php
 
+use App\Task;
+use Illuminate\Html;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,10 +14,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+// App home
+Route::get('/', 'NotesController@index');
+
+// Notes routes
+
+// home - show all
+Route::get('/notes/all', 'NotesController@all');
+
+// show
+Route::get('/notes/{note}', 'NotesController@show');
+
+// add
+Route::get('/notes/add', 'NotesController@add');
+Route::post('/notes/add', 'NotesController@store');
+
+// edit
+Route::get('/notes/{note}/edit', 'NotesController@edit');
+Route::patch('/notes/{note}', 'NotesController@update');
+
+// delete
+Route::delete('/notes/{note}/delete', 'NotesController@delete');
