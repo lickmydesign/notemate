@@ -22,7 +22,7 @@ Route::get('/', 'NotesController@index');
 // Notes routes
 
 // home - show all
-Route::get('/notes/all', 'NotesController@all');
+Route::get('/notes', 'NotesController@index');
 
 // show
 Route::get('/notes/{note}', 'NotesController@show');
