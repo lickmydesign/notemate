@@ -22,10 +22,11 @@ class NotesController extends Controller
 		$this->middleware('auth');
 	}
 
-	public function index()
+	public function index(Request $request)
 	{
-		//todo: get latest notes
-		return view('notes.index');
+		$data['latest_notes'] = $request->user()->notes()->orderBy('created_at', 'desc')->take(5)->get();
+
+		return view('notes.index', $data);
 	}
 
 	public function all()
