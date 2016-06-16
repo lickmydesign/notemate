@@ -24,17 +24,23 @@ class NotesController extends Controller
 
 	public function index()
 	{
+		//todo: get latest notes
+		return view('notes.index');
+	}
 
+	public function all()
+	{
+		return view('notes.showall');
 	}
 
 	public function show()
 	{
-
+		return view('notes.show');
 	}
 
 	public function add()
 	{
-
+		return view('notes.add');
 	}
 
 	public function save()
@@ -44,7 +50,7 @@ class NotesController extends Controller
 
 	public function edit()
 	{
-
+		return view('notes.edit');
 	}
 
 	public function update()
