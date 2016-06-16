@@ -37,3 +37,6 @@ Route::patch('/notes/{note}', 'NotesController@update');
 
 // delete
 Route::delete('/notes/{note}', 'NotesController@delete');
+
+// about
+Route::get('/about', 'AboutController@index');
