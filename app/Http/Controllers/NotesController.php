@@ -72,8 +72,14 @@ class NotesController extends Controller
 		return redirect('/notes');
 	}
 
-	public function delete()
+	public function delete(Note $note)
 	{
+		//check authorised
+		$this->authorize('delete', $note);
 
+		$note->delete();
+
+		flash('Note deleted.', 'success');
+		return redirect('/notes');
 	}
 }

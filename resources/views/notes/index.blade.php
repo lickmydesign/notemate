@@ -26,7 +26,7 @@
 						</td>
 
 						<td>
-							<form action="{{ url('notes/'.$note->id) }}/delete" method="POST">
+							<form action="{{ url('notes/'.$note->id) }}" method="POST">
 								{{ csrf_field() }}
 								{{ method_field('DELETE') }}
 
