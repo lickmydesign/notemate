@@ -34,9 +34,12 @@ class NotesController extends Controller
 		return view('notes.showall');
 	}
 
-	public function show()
+	public function show(Note $note)
 	{
-		return view('notes.show');
+		// eager load user details for the note
+		$data['note'] = $note->load('user');
+
+		return view('notes.show', $data);
 	}
 
 	public function add()
