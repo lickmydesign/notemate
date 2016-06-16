@@ -1,3 +1,6 @@
+<?php
+$app_name = Config::get('constants.app_name');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +8,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Note Mate</title>
+	<title>
+		@if (isset($page_title))
+			{{ $app_name }} - {{ $page_title}}
+		@else
+			{{ $app_name }}
+		@endif
+	</title>
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">

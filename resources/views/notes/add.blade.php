@@ -6,7 +6,7 @@
 		{{ csrf_field() }}
 
 		<fieldset>
-			<legend>Add A New Note</legend>
+			<legend>{{ $page_title }}</legend>
 
 			<div class="form-group">
 				<label for="note-title" class="col-sm-3 control-label">Title</label>

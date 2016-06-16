@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<h1>Note Details</h1>
+	<h1>{{ $page_title }}</h1>
 
 	<table class="table table-bordered">
 		<tr>

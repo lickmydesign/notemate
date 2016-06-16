@@ -25,6 +25,7 @@ class NotesController extends Controller
 	public function index(Request $request)
 	{
 		$data['latest_notes'] = $request->user()->notes()->orderBy('created_at', 'desc')->take(5)->get();
+		$data['page_title'] = 'Welcome';
 
 		return view('notes.index', $data);
 	}
@@ -39,12 +40,15 @@ class NotesController extends Controller
 		// eager load user details for the note
 		$data['note'] = $note->load('user');
 
+		$data['page_title'] = 'Note Details';
+
 		return view('notes.show', $data);
 	}
 
 	public function add()
 	{
-		return view('notes.add');
+		$data['page_title'] = 'Add Note';
+		return view('notes.add', $data);
 	}
 
 	public function save(Request $request)
@@ -62,6 +66,7 @@ class NotesController extends Controller
 
 	public function edit(Note $note)
 	{
+		$data['page_title'] = 'Edit Note';
 		$data['note'] = $note;
 
 		return view('notes.edit', $data);
