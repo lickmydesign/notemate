@@ -36,6 +36,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-envelope"></i> Send Password Reset Link
                                 </button>
+                                <a href="\notes" class="btn btn-default"><i class="fa fa-times"></i> Cancel</a>
                             </div>
                         </div>
                     </form>

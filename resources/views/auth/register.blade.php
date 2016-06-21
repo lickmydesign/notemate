@@ -71,6 +71,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-user"></i> Register
                                 </button>
+                                <a href="\notes" class="btn btn-default"><i class="fa fa-times"></i> Cancel</a>
                             </div>
                         </div>
                     </form>
