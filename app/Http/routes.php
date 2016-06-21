@@ -21,10 +21,13 @@ Route::get('/', 'NotesController@index');
 
 // Notes routes
 
-// home - show all
+// home - show latest
 Route::get('/notes', 'NotesController@index');
 
-// show
+// show all
+Route::get('/all', 'NotesController@all');
+
+// show detail
 Route::get('/notes/{note}', 'NotesController@show');
 
 // add

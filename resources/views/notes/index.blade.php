@@ -45,6 +45,9 @@
 					@endforeach
 					</tbody>
 				</table>
+				@if ($total_notes > 5)
+					<p><a href="/all">View all notes...</a></p>
+				@endif
 			</div>
 		@else
 			<div class="panel-body text-muted">

@@ -24,15 +24,19 @@ class NotesController extends Controller
 
 	public function index(Request $request)
 	{
+		$data['total_notes'] = $request->user()->notes()->count();
 		$data['latest_notes'] = $request->user()->notes()->orderBy('created_at', 'desc')->take(5)->get();
-		$data['page_title'] = 'Welcome';
 
+		$data['page_title'] = 'Welcome';
 		return view('notes.index', $data);
 	}
 
-	public function all()
+	public function all(Request $request)
 	{
-		return view('notes.showall');
+		$data['notes'] = $request->user()->notes()->orderBy('created_at', 'desc')->paginate(10);
+
+		$data['page_title'] = 'All Notes';
+		return view('notes.showall', $data);
 	}
 
 	public function show(Note $note)
