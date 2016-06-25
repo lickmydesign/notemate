@@ -28,5 +28,6 @@ class PasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        view()->share('app_name', config('constants.app_name'));
     }
 }
