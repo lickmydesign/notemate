@@ -12,6 +12,7 @@
 				<thead>
 				<tr>
 					<th>Title</th>
+					<th>Created</th>
 					<th>Actions</th>
 				</tr>
 				</thead>
@@ -22,7 +23,7 @@
 						<td class="table-text">
 							<a href="/notes/{{ $note->id }}" title="View Note">{{ $note->title }}</a>
 						</td>
-
+						<td>{{ date($date_format, strtotime($note->created_at)) }}</td>
 						<td>
 							<form action="{{ url('notes/'.$note->id) }}" method="POST">
 								{{ csrf_field() }}

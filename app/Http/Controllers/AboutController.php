@@ -10,6 +10,10 @@ class AboutController extends Controller
 {
 
 	//allow unauthenticated users
+	public function __construct()
+	{
+		view()->share('app_name', config('constants.app_name'));
+	}
 
 	public function index()
 	{

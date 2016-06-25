@@ -1,6 +1,3 @@
-<?php
-$app_name = Config::get('constants.app_name');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

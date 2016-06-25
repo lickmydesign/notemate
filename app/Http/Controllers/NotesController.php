@@ -20,6 +20,8 @@ class NotesController extends Controller
 	{
 		// make sure all actions are authenticated
 		$this->middleware('auth');
+		view()->share('app_name', config('constants.app_name'));
+		view()->share('date_format', config('constants.date_format'));
 	}
 
 	public function index(Request $request)

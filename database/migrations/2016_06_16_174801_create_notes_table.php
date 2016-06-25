@@ -17,7 +17,7 @@ class CreateNotesTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->string('title');
             $table->text('contents');
-            $table->timestamps();
+            $table->timestamps(); //creates 'created_at', 'updated_at' cols
         });
     }
 
